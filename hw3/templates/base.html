@@ -1,0 +1,13 @@
+<head>
+    <link rel='stylesheet' type='text/css' href='../static/styles.css'>
+</head>
+
+<title>{% block title %}{% endblock %} - Flaskr</title>
+
+<nav>
+  <h1>Movie Reviews</h1>
+  <a href="/"><button>All Reviews</button></a>
+</nav>
+<section class="content">
+  {% block content %}{% endblock %}
+</section>
