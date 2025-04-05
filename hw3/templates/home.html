@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% block body %}
+    <body>
+        <form>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <label for="text">Text:</label>
+                <input type="text" id="text" name="text">
+                <label for="rating">Rating:</label>
+                <input type="number" min="0" max="5" id="rating" name="rating">
+                <button type="submit">Submit review</button>
+            </div>
+        </form>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Rating</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for review in reviews %}
+            <tr>
+                <td>{{review.title}}</td>
+                <td>{{review.text}}</td>
+                <td>{{review.rating}}</td>
+                <td><button><a href="/{{review.title}}">Edit</a></button></td>
+                <td><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_link_advanced"></a><button>Delete</button></a></td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </body>
+    {% endblock %}
+{% endblock %}
+
