@@ -8,6 +8,13 @@ h1 {
     font-size: x-large;
 }
 
+h2 {
+    font-size: large;
+}
+
+p {
+    font-size: medium;
+}
 
 table {
     font-family: var(--font-family);
@@ -25,8 +32,8 @@ td, th {
 td button {
     /* display: flex; */
     /* flex-direction: column; */
-    font-family: var(--font-family);
-    width: 100%;
+    /* font-family: var(--font-family);
+    width: 100%; */
 }
 
 tr:nth-child(even) {
@@ -38,17 +45,17 @@ button {
 }
 
 nav {
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
     background-color: palegoldenrod;
     border: solid black;
 }
 
 .reviewbutton {
-    color: black;
     background-color: cadetblue;
     text-decoration: none;
     transition: background-color 0.3s;
+    border-radius: 10px;
 }
 
 .reviewbutton:hover{

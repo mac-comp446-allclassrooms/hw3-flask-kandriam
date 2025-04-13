@@ -103,23 +103,23 @@ def show_review(id):
     review = db_manager.get(id)
     return render_template('review.html', review = review)
 
-@app.route('/edit/<id>/<title>', methods=("GET", "POST"))
-def edit_review(id, title):
+@app.route('/edit/<id>', methods=("GET", "POST"))
+def edit_review(id):
     review = db_manager.get(id)
     if request.method == "GET":
-        return render_template('edit.html', tit = review.title, rat = review.rating, tex = review.text, id = review.id)
+        return render_template('edit.html', title = review.title, rating = review.rating, text = review.text, id = review.id)
     if request.method == "POST":
-        title2 = request.form["titleinput"]
+        title = request.form["titleinput"]
         rating = str(request.form["ratinginput"])
         text = request.form["textinput"]
-        db_manager.update(id, title2, text, rating)
+        db_manager.update(id, title, text, rating)
         return redirect('/')
         # return show_all_reviews()
 
 @app.route('/create', methods=("GET", "POST"))
 def create_review():
     if request.method == "GET":
-        return render_template('edit.html', rat="4")
+        return render_template('edit.html', title = "", rating = 4, text = "")
     if request.method == "POST":
         title = request.form["titleinput"]
         rating = str(request.form["ratinginput"])

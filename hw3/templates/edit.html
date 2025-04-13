@@ -2,18 +2,18 @@
 {% block content %}
     {% block body %}
     <body>
-        <form autocomplete="off" method="post" required>
+        <form method="post">
             <label for="titleinput">Movie Title: </label>
             <br>
-            <input type="text" id="titleinput" name="titleinput" value="{{tit}}">
+            <input type="text" id="titleinput" name="titleinput" value="{{title}}" required>
             <br>
             <label for="ratinginput">Rating: </label>
             <br>
-            <input type="number" id="ratinginput" name="ratinginput" min="1" max="5" value="{{rat}}">
+            <input type="number" id="ratinginput" name="ratinginput" min="1" max="5" value="{{rating}}">
             <br>
             <label for="textinput">Review: </label>
             <br>
-            <textarea id="textinput" name="textinput">{{tex}}</textarea>
+            <textarea id="textinput" name="textinput" required>{{text}}</textarea>
             <br>
             <input type="submit" value="Submit">
         </form>

@@ -5,8 +5,11 @@
         <h1>{{review.title}}</h1>
         <p>{% for i in range(review.rating)%} &#11088
             {% endfor %}</p>
+        <h2>Review:</h2>
         <p>{{review.text}}</p>
-        <!-- <button><a href="/edit/{{review.id}}/{{review.title}}">Edit</a></button>        <a href="/delete/{{review.id}}"></a><button>Delete</button></a> -->
+        <!-- <a href="/"><button>All Reviews</button></a> -->
+        <!-- <button><a href="/edit/{{review.id}}/{{review.title}}">Edit</a></button> -->
+        <!-- <a href="/delete/{{review.id}}"></a><button>Delete</button></a> -->
     </body>
     {% endblock %}
 {% endblock %}
