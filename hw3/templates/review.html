@@ -3,11 +3,10 @@
     {% block body %}
     <body>
         <h1>{{review.title}}</h1>
-        <h2>Review</h2>
+        <p>{% for i in range(review.rating)%} &#11088
+            {% endfor %}</p>
         <p>{{review.text}}</p>
-        <p>{{review.rating}}</p>
-        <button>Edit</button>
-        <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_link_advanced"></a><button>Delete</button></a>
+        <!-- <button><a href="/edit/{{review.id}}/{{review.title}}">Edit</a></button>        <a href="/delete/{{review.id}}"></a><button>Delete</button></a> -->
     </body>
     {% endblock %}
 {% endblock %}

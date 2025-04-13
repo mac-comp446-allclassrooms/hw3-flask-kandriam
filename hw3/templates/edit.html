@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% block body %}
+    <body>
+        <form autocomplete="off" method="post" required>
+            <label for="titleinput">Movie Title: </label>
+            <br>
+            <input type="text" id="titleinput" name="titleinput" value="{{tit}}">
+            <br>
+            <label for="ratinginput">Rating: </label>
+            <br>
+            <input type="number" id="ratinginput" name="ratinginput" min="1" max="5" value="{{rat}}">
+            <br>
+            <label for="textinput">Review: </label>
+            <br>
+            <textarea id="textinput" name="textinput">{{tex}}</textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+    {% endblock %}
+{% endblock %}

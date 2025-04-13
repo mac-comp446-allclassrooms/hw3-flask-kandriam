@@ -1,15 +1,74 @@
+:root{
+    /* --font: monospace;     */
+    /* --font: 'Lucida Console', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Lucida Console', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+
 table {
-    font-family: arial, sans-serif;
+    font-family: var(--font-family);
     border-collapse: collapse;
     width: 100%;
 }
 
 td, th {
+    font-family: var(--font-family);
     border: 1px solid pink;
     text-align: left;
     /* padding: 8px; */
 }
 
+td button {
+    /* display: flex; */
+    /* flex-direction: column; */
+    font-family: var(--font-family);
+    width: 100%;
+}
+
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: powderblue;
+}
+
+button {
+    font-family: var(--font-family);
+}
+
+nav {
+    /* display: flex; */
+    justify-content: space-between;
+    background-color: palegoldenrod;
+    border: solid black;
+}
+
+.reviewbutton {
+    color: black;
+    background-color: cadetblue;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.reviewbutton:hover{
+    background-color: aqua;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.tabbutton {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    float: right;
+    background-color: coral;
+    transition: background-color 0.5s;
+    border-radius: 0 0 10px 10px;
+}
+
+.tabbutton:hover {
+    background-color: orangered;
 }

@@ -7,7 +7,11 @@ Instructions are [here](https://docs.google.com/document/d/1o2QIHHCon3xKpbKhiq1T
 
 Geeksforgeeks, W3 Schools
 Pallets Projects
+Help from Nick Duncan
+Specifics:
+- https://flask.palletsprojects.com/en/stable/tutorial/templates/
 - https://flask.palletsprojects.com/en/stable/quickstart/#routing
+- https://flask.palletsprojects.com/en/stable/tutorial/database/
 
 User Requirements
 - If the user visits the home page of the website (/), a list of reviews is shown in a table.  The table lists each review's movie title and rating, a link to edit the review, and a link to delete the review. - Done
