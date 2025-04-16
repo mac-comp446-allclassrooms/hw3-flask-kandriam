@@ -1,0 +1,14 @@
+<head>
+    <link rel='stylesheet' type='text/css' href='../static/styles.css'>
+</head>
+
+<title>{% block title %}{% endblock %} Kaliana's Movie Reviews</title>
+
+<nav>
+  <a href="/"><h1>Movie Reviews</h1></a>
+  <a href="/"><div class="tabbutton">All Reviews</div></a>
+  <a href="/create"><div class="tabbutton">Create New Review</div></a>
+</nav>
+<section class="content">
+  {% block content %}{% endblock %}
+</section>

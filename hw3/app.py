@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -90,7 +90,49 @@ def reset_db():
 
 @app.route('/')
 def show_all_reviews():
-    return 'Welcome to Movie Theater reviews!'
+    # Start
+    reviews = db_manager.get()
+    # print("penis")
+    # print(reviews[0])
+    return render_template('home.html', reviews = reviews)
+    # End
+    # return 'Welcome to Movie Theater reviews!'
+
+@app.route('/show/<id>')
+def show_review(id):
+    review = db_manager.get(id)
+    return render_template('review.html', review = review)
+
+@app.route('/edit/<id>', methods=("GET", "POST"))
+def edit_review(id):
+    review = db_manager.get(id)
+    if request.method == "GET":
+        return render_template('edit.html', title = review.title, rating = review.rating, text = review.text, id = review.id)
+    if request.method == "POST":
+        title = request.form["titleinput"]
+        rating = str(request.form["ratinginput"])
+        text = request.form["textinput"]
+        db_manager.update(id, title, text, rating)
+        return redirect('/')
+        # return show_all_reviews()
+
+@app.route('/create', methods=("GET", "POST"))
+def create_review():
+    if request.method == "GET":
+        return render_template('edit.html', title = "", rating = 4, text = "")
+    if request.method == "POST":
+        title = request.form["titleinput"]
+        rating = str(request.form["ratinginput"])
+        text = request.form["textinput"]
+        db_manager.create(title, text, rating)
+        return redirect('/')
+
+@app.route('/delete/<id>')
+def delete_review(id):
+    db_manager.delete(id)
+    return redirect('/')
+
+    
 
   
 # RUN THE FLASK APP

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% block body %}
+    <body>
+        <h1>{{review.title}}</h1>
+        <p>{% for i in range(review.rating)%} &#11088
+            {% endfor %}</p>
+        <h2>Review:</h2>
+        <p>{{review.text}}</p>
+        <a href="/"><button>All Reviews</button></a>
+        <button><a href="/edit/{{review.id}}">Edit</a></button>
+        <button><a href="/delete/{{review.id}}">Delete</a></button>
+    </body>
+    {% endblock %}
+{% endblock %}
