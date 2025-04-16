@@ -24,7 +24,7 @@ table {
 
 td, th {
     font-family: var(--font-family);
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     text-align: left;
     /* padding: 8px; */
 }
